@@ -1,0 +1,125 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #2193b0;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 30px;
+}
+
+
+.input-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-group input[type="text"] {
+    width: calc(100% - 120px); 
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+.input-group button {
+    padding: 10px 15px;
+    background-color: #2193b0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    outline: none;
+}
+
+.input-group button:hover, .input-group button:focus {
+    transform: scale(1.1); 
+    background-color: #157a96;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.button-group button {
+    width: 100%;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: #64b3f4; 
+    color: white;
+}
+
+.button-group button:hover {
+    transform: scale(1.05); 
+    background-color: #4a91f2; 
+}
+
+.error-msg {
+    color: red;
+    visibility: hidden; 
+    height: 0;
+}
+
+.weather-result {
+    width: 100%;
+    padding: 20px;
+}
+
+footer {
+    margin-top: 20px;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .input-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .input-group input[type="text"], 
+    .input-group button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .button-group button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App Client</title>
+    <link rel="stylesheet" href="weather.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Weather App</h1>
+      </header>
+      <main>
+        <div class="input-group">
+          <input
+            type="text"
+            id="cityName"
+            placeholder="Masukkan nama kota"
+            autofocus
+          />
+          <button id="searchBtn">Search</button>
+        </div>
+        <p id="error-msg" class="error-msg"></p>
+        <div class="button-group">
+          <button id="saveFavBtn">Save as Favorite</button>
+          <button id="updatePrefBtn">Update Preferences</button>
+          <button id="deleteFavBtn">Delete Favorite</button>
+          <button id="checkUpdateBtn">Check Last Update</button>
+          <button id="checkOptionsBtn">Check Options</button>
+        </div>
+        <section id="weatherResult" class="weather-result">
+        </section>
+      </main>
+      <footer>
+        <p>Weather App ©2024</p>
+      </footer>
+    </div>
+    <script src="weather.js"></script>
+    <script src="get.js"></script>
+    <script src="post.js"></script>
+    <script src="put.js"></script>
+    <script src="patch.js"></script>
+    <script src="delete.js"></script>
+    <script src="head.js"></script>
+    <script src="option.js"></script>
+  </body>
+</html>
