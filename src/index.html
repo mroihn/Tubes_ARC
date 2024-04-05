@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple REST Client</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+      h2 {
+        text-align: center;
+      }
+      label {
+        font-weight: bold;
+      }
+      input[type="text"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 15px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      .response-container {
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: #fff;
+      }
+      .response-code {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .response-body {
+        overflow: auto;
+        white-space: pre-wrap;
+      }
+      .response-headers{
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Simple REST Client</h2>
+      <label for="url">URL:</label>
+      <input type="text" id="url" placeholder="Enter URL..." />
+      <label for="method">Method:</label>
+      <select id="method">
+        <option value="GET">GET</option>
+        <option value="POST">POST</option>
+        <option value="PUT">PUT</option>
+        <option value="DELETE">DELETE</option>
+      </select>
+      <label for="body">Request Body:</label>
+      <textarea
+        id="body"
+        rows="5"
+        placeholder="Enter request body..."
+      ></textarea>
+      <button onclick="sendRequest()">Send Request</button>
+      <div
+        class="response-container"
+        id="responseContainer"
+        style="display: none"
+      >
+        <div class="response-code" id="responseCode"></div>
+        <div class="response-headers" id="responseHeaders"></div>
+        <div class="response-body" id="responseBody"></div>
+        <!-- <div id="responseContainer" style="display: none">
+          <p id="responseCode"></p>
+          <div id="responseHeaders"></div>
+          <p id="responseBody"></p>
+        </div> -->
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
