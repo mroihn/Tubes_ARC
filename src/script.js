@@ -5,7 +5,24 @@ async function sendRequest() {
     let body = document.getElementById("body").value;
     let response;
     if (method == "GET") {
-      response = await fetch(`http://localhost:3000/http-request-get?url=${url}`);
+      response = await fetch(
+        `http://localhost:3000/http-request-get?url=${url}`,
+        {
+          method: "GET",
+        }
+      );
+    } else if (method == "POST") {
+        let jsonbody = JSON.parse(body);
+      response = await fetch(
+        `http://localhost:3000/http-request-post?url=${url}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(jsonbody),
+        }
+      );
     }
     const responseData = await response.json();
     document.getElementById("responseContainer").style.display = "block";
