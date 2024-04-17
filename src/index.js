@@ -19,6 +19,7 @@ app.get("/http-request-get", async function (req, res) {
       data: response.data,
       headers: response.headers,
       status: response.status,
+      contentType: response.headers.get("Content-Type"),
     };
     res.json(responseData);
   } catch (error) {

@@ -46,6 +46,7 @@
         background-color: #45a049;
       }
       .response-container {
+        position: relative;
         margin-top: 20px;
         border: 1px solid #ccc;
         border-radius: 5px;
@@ -60,8 +61,28 @@
         overflow: auto;
         white-space: pre-wrap;
       }
-      .response-headers{
+      .response-headers {
         overflow: auto;
+      }
+      #responseMethod {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #f0f0f0;
+        background-color: rgb(12, 212, 12);
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .xmp {
+        background-color: #f4f4f4; /* Background color */
+        border: 1px solid #ccc; /* Border */
+        border-radius: 5px; /* Border radius */
+        padding: 10px; /* Padding */
+        overflow: auto; /* Enable scrollbars if needed */
+        white-space: pre-wrap; /* Preserve line breaks and spaces */
+        font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace; /* Set a monospace font */
+        font-size: 14px; /* Font size */
+        color: #333; /* Text color */
       }
     </style>
   </head>
@@ -90,8 +111,10 @@
         style="display: none"
       >
         <div class="response-code" id="responseCode"></div>
+        <div class="response-method" id="responseMethod"></div>
         <div class="response-headers" id="responseHeaders"></div>
-        <div class="response-body" id="responseBody"></div>
+        <pre><code><xmp class="response-body" id="responseBody"></xmp></code></pre>
+        <!-- <div ></div> -->
         <!-- <div id="responseContainer" style="display: none">
           <p id="responseCode"></p>
           <div id="responseHeaders"></div>

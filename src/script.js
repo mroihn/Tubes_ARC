@@ -12,7 +12,7 @@ async function sendRequest() {
         }
       );
     } else if (method == "POST") {
-        let jsonbody = JSON.parse(body);
+      let jsonbody = JSON.parse(body);
       response = await fetch(
         `http://localhost:3000/http-request-post?url=${url}`,
         {
@@ -27,7 +27,8 @@ async function sendRequest() {
     const responseData = await response.json();
     document.getElementById("responseContainer").style.display = "block";
     document.getElementById("responseCode").innerText =
-      "Response Code: " + response.status;
+      "Response Code: " + responseData.status;
+    document.getElementById("responseMethod").innerText = method;
 
     const headersContainer = document.getElementById("responseHeaders");
     headersContainer.innerHTML = "";
@@ -38,11 +39,23 @@ async function sendRequest() {
       headersContainer.appendChild(headerElement);
     }
 
-    document.getElementById("responseBody").innerText = JSON.stringify(
-      responseData.data,
-      null,
-      2
-    );
+    document.getElementById("responseBody").style.display = "block";
+    const contentType = responseData.contentType;
+    if (contentType && contentType.includes("text/html")) {
+      document.getElementById("responseBody").innerHTML = responseData.data;
+    } else {
+      document.getElementById("responseBody").innerText = JSON.stringify(
+        responseData.data,
+        null,
+        2
+      );
+    }
+
+    // document.getElementById("responseBody").innerText = JSON.stringify(
+    //   responseData.data,
+    //   null,
+    //   2
+    // );
   } catch (error) {
     alert(error);
     console.error("Error:", error);
