@@ -23,6 +23,18 @@ async function sendRequest() {
           body: JSON.stringify(jsonbody),
         }
       );
+    } else if (method == "PATCH") {
+      let jsonbody = JSON.parse(body);
+      response = await fetch(
+        `http://localhost:3000/http-request-patch?url=${url}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(jsonbody),
+        }
+      );
     }
     const responseData = await response.json();
     document.getElementById("responseHeaderContainer").style.display = "block";
@@ -60,6 +72,7 @@ async function sendRequest() {
     //   2
     // );
   } catch (error) {
+    alert(error);
     console.error("Error:", error);
     document.getElementById("responseBodyContainer").style.display = "none";
     document.getElementById("responseHeaderContainer").style.display = "none";
