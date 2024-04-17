@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App Client</title>
+    <link rel="stylesheet" href="weather.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Weather App</h1>
+      </header>
+      <main>
+        <div class="input-group">
+          <select id="method">
+            <option value="GET">GET</option>
+            <option value="POST">POST</option>
+            <option value="PATCH">PATCH</option>
+            <option value="PUT">PUT</option>
+            <option value="DELETE">DELETE</option>
+          </select>
+          <input type="text" id="url" placeholder="Masukkan URL" autofocus />
+          <button onclick="sendRequest()">Send</button>
+        </div>
+        <label for="body">Request Body</label>
+        <textarea
+          id="body"
+          rows="5"
+          placeholder="Enter request body..."
+        ></textarea>
+
+        <div class="response-code-container">
+          <div class="response-code" id="responseCode"></div>
+          <div class="response-method" id="responseMethod"></div>
+        </div>
+
+        <label id="headerLabel"></label>
+        <div id="responseHeaderContainer" style="display: none"> 
+          <div class="response-container">
+            <div class="response-headers" id="responseHeaders"></div>
+          </div>
+        </div>
+
+        <label id="bodyLabel"></label>
+        <div
+          class="response-container"
+          id="responseBodyContainer"
+          style="display: none"
+        >
+          <pre><code><xmp class="response-body" id="responseBody"></xmp></code></pre>
+        </div>
+      </main>
+      <footer>
+        <p>Weather App ©2024</p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
