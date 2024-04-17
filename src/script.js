@@ -35,6 +35,25 @@ async function sendRequest() {
           body: JSON.stringify(jsonbody),
         }
       );
+    } else if (method == "PUT") {
+      let jsonbody = JSON.parse(body);
+      response = await fetch(
+        `http://localhost:3000/http-request-put?url=${url}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(jsonbody),
+        }
+      );
+    } else if (method == "DELETE") {
+      response = await fetch(
+        `http://localhost:3000/http-request-delete?url=${url}`,
+        {
+          method: "DELETE",
+        }
+      );
     }
     const responseData = await response.json();
     document.getElementById("responseHeaderContainer").style.display = "block";
@@ -72,14 +91,17 @@ async function sendRequest() {
     //   2
     // );
   } catch (error) {
-    alert(error);
+    // alert(error);
     console.error("Error:", error);
     document.getElementById("responseBodyContainer").style.display = "none";
     document.getElementById("responseHeaderContainer").style.display = "none";
-    document.getElementById("responseCode").innerText =
-    "An error occurred. Please check your request.";
     document.getElementById("responseMethod").innerText = "";
     document.getElementById("headerLabel").innerText = "";
-    document.getElementById("bodyLabel").innerText = "";    
+    document.getElementById("bodyLabel").innerText = "";
+    document.getElementById("error-text").innerText =
+      "An error occurred. Please check your request.";
+    document.getElementById("responseCode").innerText =
+      error.response.status;
+    
   }
 }

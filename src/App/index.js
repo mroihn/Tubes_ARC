@@ -25,7 +25,7 @@ app.get("/http-request-get", async function (req, res) {
     };
     res.json(responseData);
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.send(error);
   }
 });
@@ -43,7 +43,7 @@ app.post("/http-request-post", async function (req, res) {
     };
     res.json(responseData);
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.send(error);
   }
 });
@@ -61,7 +61,40 @@ app.patch("/http-request-patch", async function (req, res) {
     };
     res.json(responseData);
   } catch (error) {
-    console.log(error);
+    // console.log(error);
+    res.send(error);
+  }
+});
+
+app.put("/http-request-put", async function (req, res) {
+  try {
+    const url = req.query.url;
+    const body = req.body;
+    console.log(body);
+    const response = await axios.put(url, body);
+    const responseData = {
+      data: response.data,
+      headers: response.headers,
+      status: response.status,
+    };
+    res.json(responseData);
+  } catch (error) {
+    // console.log(error);
+    res.send(error);
+  }
+});
+
+app.delete("/http-request-delete", async function (req, res) {
+  try {
+    const url = req.query.url;
+    const response = await axios.delete(url);
+    const responseData = {
+      data: response.data,
+      headers: response.headers,
+      status: response.status,
+    };
+    res.json(responseData);
+  } catch (error) {
     res.send(error);
   }
 });

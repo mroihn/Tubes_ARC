@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather App Client</title>
-    <link rel="stylesheet" href="weather.css" />
+    <title>Rest API Client</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <div class="container">
       <header>
-        <h1>Weather App</h1>
+        <h1>Rest API Client</h1>
       </header>
       <main>
         <div class="input-group">
@@ -36,7 +36,7 @@
         </div>
 
         <label id="headerLabel"></label>
-        <div id="responseHeaderContainer" style="display: none"> 
+        <div id="responseHeaderContainer" style="display: none">
           <div class="response-container">
             <div class="response-headers" id="responseHeaders"></div>
           </div>
@@ -50,9 +50,10 @@
         >
           <pre><code><xmp class="response-body" id="responseBody"></xmp></code></pre>
         </div>
+        <label id="error-text"></label>
       </main>
       <footer>
-        <p>Weather App ©2024</p>
+        <p>Rest API Client ©2024</p>
       </footer>
     </div>
     <script src="script.js"></script>
