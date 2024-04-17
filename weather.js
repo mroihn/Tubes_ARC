@@ -25,19 +25,19 @@ function displayWeather(data) {
     let weatherImageSrc;
     switch (data.weather[0].main.toLowerCase()) {
       case "clear":
-        weatherImageSrc = 'clear.png"';
+        weatherImageSrc = 'clear.png';
         break;
       case "clouds":
-        weatherImageSrc = "clouds.png";
+        weatherImageSrc = 'clouds.png';
         break;
       case "rain":
-        weatherImageSrc = "rain.png";
+        weatherImageSrc = 'rain.png';
         break;
       case "thunderstorm":
-        weatherImageSrc = 'thunderstorm.png"';
+        weatherImageSrc = 'thunderstorm.png';
         break;
       default:
-        weatherImageSrc = "default.png"; //"mist", "snow", atau "fog"
+        weatherImageSrc = 'default.png'; //"mist", "snow", atau "fog"
     }
 
     const weather = `
